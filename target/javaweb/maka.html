@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" id="file" />
+</body>
+<script>
+  document.getElementById('file').addEventListener('change', function (e) {
+    // 获取文件
+    var file = e.target.files[0];
+    // 将文件上传到服务器
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/upload', true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        // 上传成功
+      }
+    };
+    xhr.send(file);
+  });
+</script>
+</html>
